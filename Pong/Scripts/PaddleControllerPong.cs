@@ -20,6 +20,10 @@ public class PaddleControllerPong : MonoBehaviour
         var inputKey = (isPlayer) ?
             Input.GetAxisRaw("Vertical") : Input.GetAxisRaw("Vertical2");
         float movement = inputKey * speed * Time.deltaTime;
+        MoveInBounds(movement);
+    }
+
+    private void MoveInBounds(float movement) {
         Vector2 paddlePosition = transform.position;
         paddlePosition.y = Mathf.Clamp(paddlePosition.y + movement, -3, 3);
         transform.position = paddlePosition;
