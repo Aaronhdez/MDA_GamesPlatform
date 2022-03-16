@@ -25,7 +25,7 @@ public class PaddleControllerPong : MonoBehaviour
 
     private void MoveInBounds(float movement) {
         Vector2 paddlePosition = transform.position;
-        paddlePosition.y = Mathf.Clamp(paddlePosition.y + movement, -3, 3);
+        paddlePosition.y = Mathf.Clamp(paddlePosition.y + movement, -3.5f, 2f);
         transform.position = paddlePosition;
     }
 }
