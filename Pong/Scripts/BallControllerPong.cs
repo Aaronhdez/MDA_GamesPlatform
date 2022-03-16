@@ -17,5 +17,8 @@ public class BallControllerPong : MonoBehaviour
     }
 
     private void Launch() {
+        float xVelocity = UnityEngine.Random.Range(0, 2) == 0 ? 1 : -1;
+        float yVelocity = UnityEngine.Random.Range(0, 2) == 0 ? 1 : -1;
+        ballRb.velocity = new Vector2(xVelocity, yVelocity) * initialVelocity;
     }
 }
