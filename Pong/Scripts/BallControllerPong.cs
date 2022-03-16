@@ -21,4 +21,7 @@ public class BallControllerPong : MonoBehaviour
         float yVelocity = UnityEngine.Random.Range(0, 2) == 0 ? 1 : -1;
         ballRb.velocity = new Vector2(xVelocity, yVelocity) * initialVelocity;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+    }
 }
