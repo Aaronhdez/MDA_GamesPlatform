@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 206405533}
   - component: {fileID: 206405532}
   - component: {fileID: 206405531}
+  - component: {fileID: 206405534}
   m_Layer: 5
   m_Name: BreakoutButton
   m_TagString: Untagged
@@ -244,6 +245,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206405529}
   m_CullTransparentMesh: 1
+--- !u!114 &206405534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206405529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25eb5bf49c8943a4486b7bba1fb36bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &299306478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,6 +1121,7 @@ GameObject:
   - component: {fileID: 1182216175}
   - component: {fileID: 1182216174}
   - component: {fileID: 1182216173}
+  - component: {fileID: 1182216176}
   m_Layer: 5
   m_Name: PongButton
   m_TagString: Untagged
@@ -1178,7 +1192,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1182216174}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1182216176}
+        m_TargetAssemblyTypeName: SceneSelector, Assembly-CSharp
+        m_MethodName: LoadPongScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1182216174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1217,6 +1243,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182216171}
   m_CullTransparentMesh: 1
+--- !u!114 &1182216176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182216171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25eb5bf49c8943a4486b7bba1fb36bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1383158938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,6 +1371,7 @@ GameObject:
   - component: {fileID: 2012605033}
   - component: {fileID: 2012605032}
   - component: {fileID: 2012605031}
+  - component: {fileID: 2012605034}
   m_Layer: 5
   m_Name: ArkanoidsButton
   m_TagString: Untagged
@@ -1442,3 +1481,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012605029}
   m_CullTransparentMesh: 1
+--- !u!114 &2012605034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012605029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25eb5bf49c8943a4486b7bba1fb36bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
