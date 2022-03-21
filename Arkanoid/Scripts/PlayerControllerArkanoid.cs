@@ -8,6 +8,7 @@ public class PlayerControllerArkanoid : MonoBehaviour
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float torqueSpeed = 1.0f;
     [SerializeField] public Camera camera;
+    [SerializeField] private Transform target;
     [SerializeField] private float upperLimit;
     [SerializeField] private float lowerLimit;
     [SerializeField] private float leftLimit;
@@ -57,7 +58,7 @@ public class PlayerControllerArkanoid : MonoBehaviour
     {
         var mouse_pos = Input.mousePosition;
         mouse_pos.z = 5.23f; //The distance between the camera and object
-        var object_pos = Camera.main.WorldToScreenPoint(mouse_pos);
+        var object_pos = Camera.main.WorldToScreenPoint(target.position);
         mouse_pos.x = mouse_pos.x - object_pos.x;
         mouse_pos.y = mouse_pos.y - object_pos.y;
         var angle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
