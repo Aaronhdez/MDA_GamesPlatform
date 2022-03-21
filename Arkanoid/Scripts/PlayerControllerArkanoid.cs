@@ -29,12 +29,24 @@ public class PlayerControllerArkanoid : MonoBehaviour
     private void MovePlayer()
     {
         Vector2 playerPosition = transform.position;
-        var inputY = Input.GetAxisRaw("Vertical");
-        var inputX = Input.GetAxisRaw("Horizontal");
-        float movementY = inputY * speed * Time.deltaTime;
-        float movementX = inputX * speed * Time.deltaTime;
-        playerPosition.y = Mathf.Clamp(playerPosition.y + movementY, lowerLimit, upperLimit);
-        playerPosition.x = Mathf.Clamp(playerPosition.x + movementX, leftLimit, rightLimit);
+        playerPosition.y=MoveY(playerPosition);
+        playerPosition.x=MoveX(playerPosition);
         transform.position = playerPosition;
+    }
+
+    private float MoveX(Vector2 playerPosition)
+    {
+        var inputX = Input.GetAxisRaw("Horizontal");
+        float movementX = inputX * speed * Time.deltaTime;
+        playerPosition.x = Mathf.Clamp(playerPosition.x + movementX, leftLimit, rightLimit);
+        return playerPosition.x;
+    }
+
+    private float MoveY(Vector2 playerPosition)
+    {
+        var inputY = Input.GetAxisRaw("Vertical");
+        float movementY = inputY * speed * Time.deltaTime;
+        playerPosition.y = Mathf.Clamp(playerPosition.y + movementY, lowerLimit, upperLimit);
+        return playerPosition.y;
     }
 }
