@@ -6,9 +6,15 @@ public class PaddleControllerPong : MonoBehaviour
 {
     [SerializeField] private float speed = 7f;
     [SerializeField] private bool isPlayer;
+    [SerializeField] private float upperLimit;
+    [SerializeField] private float lowerLimit;
+    [SerializeField] private float scale;
 
     // Start is called before the first frame update
     void Start(){
+        upperLimit = GameObject.Find("UpperWall").transform.position.y;
+        lowerLimit = GameObject.Find("LowerWall").transform.position.y;
+        scale = GameObject.Find("GameScreen").transform.localScale.y;
     }
 
     // Update is called once per frame
@@ -25,7 +31,9 @@ public class PaddleControllerPong : MonoBehaviour
 
     private void MoveInBounds(float movement) {
         Vector2 paddlePosition = transform.position;
-        paddlePosition.y = Mathf.Clamp(paddlePosition.y + movement, -3.5f, 2f);
+        var upperBound = upperLimit * scale;
+        var lowerBound = lowerLimit * scale;
+        paddlePosition.y = Mathf.Clamp(paddlePosition.y + movement, lowerBound, upperBound);
         transform.position = paddlePosition;
     }
 }
