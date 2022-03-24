@@ -6,10 +6,13 @@ using UnityEngine;
 public class BallControllerPong : MonoBehaviour
 {
     [SerializeField] private float initialVelocity = 4f;
-    [SerializeField] private float multiplier = 1.1f;
+    [SerializeField] private float multiplier;
+
     private Rigidbody2D ballRb;
     void Start()
     {
+        Debug.Log(PlayerPrefs.GetFloat("speed"));
+        multiplier = PlayerPrefs.GetFloat("speed"); 
         ballRb = GetComponent<Rigidbody2D>();
         Launch();
     }

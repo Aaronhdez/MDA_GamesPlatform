@@ -16,6 +16,10 @@ public class SceneSelector : MonoBehaviour {
     }
 
     public void LoadBreakoutScene() {
+<<<<<<< HEAD
         SceneManager.LoadScene("MainSceneBreakout");
+=======
+        SceneManager.LoadScene("mainSceneBreakout");
+>>>>>>> c782509cf8fca3e333ce6e2ae0b403cbfb888fb4
     }
 }
