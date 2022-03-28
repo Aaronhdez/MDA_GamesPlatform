@@ -7,8 +7,8 @@ public class BallControllerPong : MonoBehaviour
 {
     [SerializeField] private float initialVelocity = 4f;
     [SerializeField] private float multiplier;
+    [SerializeField] private Rigidbody2D ballRb;
 
-    private Rigidbody2D ballRb;
     void Start()
     {
         Debug.Log(PlayerPrefs.GetFloat("speed"));
@@ -24,8 +24,14 @@ public class BallControllerPong : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Paddle")) {
-            initialVelocity *= multiplier;
+        if (isPaddleOrWall(collision)) {
+            ballRb.velocity *= multiplier;
         }
+    }
+
+    private static bool isPaddleOrWall(Collision2D collision) {
+        return collision.gameObject.CompareTag("Paddle") ||
+                    collision.gameObject.name.Equals("UpperWall") ||
+                    collision.gameObject.name.Equals("LowerWall");
     }
 }

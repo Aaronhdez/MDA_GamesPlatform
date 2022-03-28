@@ -136,6 +136,8 @@ GameObject:
   - component: {fileID: 339724044}
   - component: {fileID: 339724043}
   - component: {fileID: 339724047}
+  - component: {fileID: 339724048}
+  - component: {fileID: 339724049}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -262,13 +264,45 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339724042}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 508e001754826104e98e358fa2dc9309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 1
   rotationSpeed: 5
+--- !u!114 &339724048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339724042}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e3f93ccc8f28648b77464e94aa20d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &339724049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339724042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71a8a8797119914586210ce15a05dfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  torqueSpeed: 1
+  camera: {fileID: 2108049956}
+  target: {fileID: 339724046}
+  upperLimit: 0
+  lowerLimit: 0
+  leftLimit: 0
+  rightLimit: 0
 --- !u!1 &518171011
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +314,7 @@ GameObject:
   - component: {fileID: 518171013}
   - component: {fileID: 518171012}
   m_Layer: 7
-  m_Name: Boundary
+  m_Name: LeftBoundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,8 +330,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 1
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -385,7 +419,7 @@ GameObject:
   - component: {fileID: 1850531122}
   - component: {fileID: 1850531121}
   m_Layer: 7
-  m_Name: Boundary
+  m_Name: RightBoundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,8 +435,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 1
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -442,7 +476,7 @@ GameObject:
   - component: {fileID: 1895435528}
   - component: {fileID: 1895435527}
   m_Layer: 7
-  m_Name: Boundary
+  m_Name: LowerBoundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,8 +492,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 1
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -499,7 +533,7 @@ GameObject:
   - component: {fileID: 1994518469}
   - component: {fileID: 1994518468}
   m_Layer: 7
-  m_Name: Boundary
+  m_Name: UpperBoundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,8 +549,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 1
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
