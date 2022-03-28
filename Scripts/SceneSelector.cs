@@ -24,7 +24,7 @@ public class SceneSelector : MonoBehaviour {
     }
 
     public void LoadArkanoidsScene() {
-
+        SceneManager.LoadScene("MainSceneArkanoid");
     }
 
     public void LoadBreakoutScene() {
