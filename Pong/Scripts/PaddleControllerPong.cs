@@ -33,9 +33,11 @@ public class PaddleControllerPong : MonoBehaviour
     }
 
     private void MovePaddleAI() {
-        var ballPosition = GameObject.Find("Ball").transform.position;
-        float movement = (ballPosition.y - transform.position.y) * speed * Time.deltaTime;
-        MoveInBounds(movement);
+        if (GameObject.Find("Ball") != null) {
+            var ballPosition = GameObject.Find("Ball").transform.position;
+            float movement = (ballPosition.y - transform.position.y) * speed * Time.deltaTime;
+            MoveInBounds(movement);
+        }
     }
 
     private void MovePaddle() {
