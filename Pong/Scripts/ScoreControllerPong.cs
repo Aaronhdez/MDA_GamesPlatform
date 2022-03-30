@@ -17,4 +17,14 @@ public class ScoreControllerPong : MonoBehaviour
         playerTwoScore = 0;
         playerTwoScoreText.SetText(playerTwoScore.ToString());
     }
+
+    public void IncreasePlayerOneScore(int number) {
+        playerOneScore += 1;
+        playerOneScoreText.SetText(playerOneScore.ToString());
+    }
+
+    public void IncreasePlayerTwoScore(int number) {
+        playerTwoScore += 1;
+        playerTwoScoreText.SetText(playerTwoScore.ToString());
+    }
 }
