@@ -11,27 +11,44 @@ public class BallControllerPong : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(PlayerPrefs.GetFloat("speed"));
         multiplier = PlayerPrefs.GetFloat("speed"); 
         ballRb = GetComponent<Rigidbody2D>();
         Launch();
     }
 
-    private void Launch() {
+    public void Launch() {
         float xVelocity = UnityEngine.Random.Range(0, 2) == 0 ? 1 : -1;
         float yVelocity = UnityEngine.Random.Range(0, 2) == 0 ? 1 : -1;
         ballRb.velocity = new Vector2(xVelocity, yVelocity) * initialVelocity;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (isPaddleOrWall(collision)) {
+        if (IsPaddleOrWall(collision)) {
             ballRb.velocity *= multiplier;
         }
     }
 
-    private static bool isPaddleOrWall(Collision2D collision) {
+    private static bool IsPaddleOrWall(Collision2D collision) {
         return collision.gameObject.CompareTag("Paddle") ||
                     collision.gameObject.name.Equals("UpperWall") ||
                     collision.gameObject.name.Equals("LowerWall");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (IsPlayerOneTarget(collision)) {
+            GameControllerPong.Instance.IncreasePlayerOneScore(1);
+        } else if (IsPlayerTwoTarget(collision)) {
+            GameControllerPong.Instance.IncreasePlayerTwoScore(1);
+        }
+        GameControllerPong.Instance.Restart();
+        Launch();
+    }
+
+    private bool IsPlayerOneTarget(Collider2D collision) {
+        return collision.gameObject.CompareTag("pongPlayer1");
+    }
+
+    private bool IsPlayerTwoTarget(Collider2D collision) {
+        return collision.gameObject.CompareTag("pongPlayer2");
     }
 }
