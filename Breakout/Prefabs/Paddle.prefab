@@ -132,7 +132,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1117396132159972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7f561b486ddf74291e3745a243b5d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c3864ce1febae94eb34bfbe463be213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ballInitialVelocity: 600
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 212221216800178630}
   - component: {fileID: 70675906808648224}
   - component: {fileID: 50859606673952148}
-  - component: {fileID: 114703664242572246}
+  - component: {fileID: 6851930815972460827}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Paddle
@@ -358,7 +358,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &114703664242572246
+--- !u!114 &6851930815972460827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1570120126594978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25a48de82a5318408d69ebc506ec19b, type: 3}
+  m_Script: {fileID: 11500000, guid: f9d4e766b53fd69438d9de8a94368be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   boundary:
