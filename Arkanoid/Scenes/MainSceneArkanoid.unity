@@ -136,9 +136,8 @@ GameObject:
   - component: {fileID: 339724044}
   - component: {fileID: 339724043}
   - component: {fileID: 339724047}
-  - component: {fileID: 339724048}
   - component: {fileID: 339724049}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,8 +161,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -232,12 +231,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e49b907ce68367c4296e8ea36cd09997, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 58748480a94f11342b3aac87bcbcf1b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -264,25 +263,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339724042}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 508e001754826104e98e358fa2dc9309, type: 3}
+  m_Script: {fileID: 11500000, guid: 935e235c2422d034b9063f30cc5f6807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 1
-  rotationSpeed: 5
---- !u!114 &339724048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339724042}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18e3f93ccc8f28648b77464e94aa20d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  speed: 5
+  torqueSpeed: 1
+  camera: {fileID: 2108049956}
+  target: {fileID: 339724046}
+  upperLimit: 10
+  lowerLimit: 10
+  leftLimit: 10
+  rightLimit: 10
+  bulletPrefab: {fileID: -7131003045750375158, guid: 91b809c458aa68a418eec4f68863ffd9, type: 3}
 --- !u!114 &339724049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,9 +286,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 339724042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a71a8a8797119914586210ce15a05dfd, type: 3}
+  m_Script: {fileID: 11500000, guid: e28050ed55c1a5449bde9a2bc1b29861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:Arkanoid/Scenes/Arkanoid.unity
   speed: 5
   torqueSpeed: 1
   camera: {fileID: 2108049956}
@@ -304,6 +299,10 @@ MonoBehaviour:
   leftLimit: 0
   rightLimit: 0
   bulletPrefab: {fileID: -7131003045750375158, guid: eab5ae8a9ba6c4848996c12e30abdf59, type: 3}
+=======
+  speed: 500
+  maxLifeTime: 1
+>>>>>>> d6c7ee47d6b9495dc5dbc308e5bfb3601708c8ea:Arkanoid/Scenes/MainSceneArkanoid.unity
 --- !u!1 &518171011
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,10 +386,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1595180449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf54e1f3ffe2ff4ab5106ff148f2214, type: 3}
+  m_Script: {fileID: 11500000, guid: fdd49b18ba9892a42aabe1638bf19046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidPrefab: {fileID: -3352373446220928809, guid: 1ed73c2a80bd0164b99cd0834e47ee50, type: 3}
+  asteroidPrefab: {fileID: -3352373446220928809, guid: 433ed0570f0a46b4ca084c9ad62f88bd, type: 3}
   trajectoryVariance: 15
   spawnRate: 2
   spawnAmount: 1

@@ -10,6 +10,7 @@ public class Asteroid : MonoBehaviour
     public float speed = 50.0f;
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidbody;
+    private Vector3 playerPosition;
 
     private void Awake()
     {
@@ -19,15 +20,28 @@ public class Asteroid : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        playerPosition = GameObject.Find("Player").transform.position;   
+
         _spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
         this.transform.eulerAngles = new Vector3(0.0f,0.0f,Random.value * 360.0f);
         this.transform.localScale = Vector3.one * this.size;
+
 
         _rigidbody.mass =this.size;
     }
     public void SetTrajectory(Vector2 direction)
     {
         _rigidbody.AddForce(direction* this.speed);
+    }
+
+    public void Update() {
+        Destroy();
+    }
+
+    public void Destroy() {
+        if (Vector3.Distance(playerPosition, transform.position) >15.0f) {
+            Destroy(gameObject);
+        }
     }
 
     
