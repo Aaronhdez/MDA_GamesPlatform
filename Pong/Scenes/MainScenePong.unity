@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 59815337}
   - component: {fileID: 59815336}
   - component: {fileID: 59815335}
-  - component: {fileID: 9070153269902919930}
+  - component: {fileID: 59815338}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -205,7 +205,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: a5b624ffa7872104697d199b293c36cb, type: 2}
+  m_Material: {fileID: 6200000, guid: 41b02569d5862d5459c5b3e2110c88ba, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -287,6 +287,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &59815338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59815333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bceb8e9eb2bed984389b6c1aa4a41b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialVelocity: 4
+  multiplier: 1.1
+  ballRb: {fileID: 0}
 --- !u!1 &65798131
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +417,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 85794358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25eb5bf49c8943a4486b7bba1fb36bc8, type: 3}
+  m_Script: {fileID: 11500000, guid: dfc5a20676d4d64498b06c0d6cf35b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &85794361
@@ -968,11 +983,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 427568753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a96ecf280e5e98640ac7e2f6890e4313, type: 3}
+  m_Script: {fileID: 11500000, guid: e1aa22475db6d36449452b95de0fa814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  isPlayer: 1
+  isPlayer: 0
   isHuman: 1
   mode: 
   upperLimit: 0
@@ -1435,11 +1450,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1067101195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a96ecf280e5e98640ac7e2f6890e4313, type: 3}
+  m_Script: {fileID: 11500000, guid: e1aa22475db6d36449452b95de0fa814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  isPlayer: 0
+  isPlayer: 1
   isHuman: 1
   mode: 
   upperLimit: 0
@@ -1734,17 +1749,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &9070153269902919930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59815333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f20d1a57f2d7c854ea4f6183166aa0bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialVelocity: 4
-  multiplier: 1.1
