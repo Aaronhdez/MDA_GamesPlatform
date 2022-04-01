@@ -7,7 +7,7 @@ public class AsteroidSpawner : MonoBehaviour
     public float spawnRate = 2.0f;
     public int spawnAmount=1;
     public float spawnDistance = 15.0f;
-    private void Start()
+    public void Start()
     {
         InvokeRepeating(nameof(Spawn), this.spawnRate, this.spawnRate);
     }
@@ -25,6 +25,13 @@ public class AsteroidSpawner : MonoBehaviour
                 asteroid.SetTrajectory(rotation * -spawnDirection);
         }
     }
-    
+    public void PauseSpawn()
+    {
+        CancelInvoke();
+    }
+    public void ResumeSpawn()
+    {
+        InvokeRepeating(nameof(Spawn), this.spawnRate, this.spawnRate);
+    }
 }
 

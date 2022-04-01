@@ -18,10 +18,10 @@ public class PlayerControllerArkanoid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        upperLimit = GameObject.Find("UpperBoundary").transform.position.y - 1;
-        lowerLimit = GameObject.Find("LowerBoundary").transform.position.y + 1;
-        leftLimit = GameObject.Find("LeftBoundary").transform.position.x + 1;
-        rightLimit = GameObject.Find("RightBoundary").transform.position.x - 1;
+        upperLimit = GameObject.Find("PlayerUpperBoundary").transform.position.y - 1;
+        lowerLimit = GameObject.Find("PlayerLowerBoundary").transform.position.y + 1;
+        leftLimit = GameObject.Find("PlayerLeftBoundary").transform.position.x + 1;
+        rightLimit = GameObject.Find("PlayerRightBoundary").transform.position.x - 1;
     }
 
     // Update is called once per frame
@@ -75,6 +75,13 @@ public class PlayerControllerArkanoid : MonoBehaviour
     {
         Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
         bullet.Project(this.transform.up);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Asteroid")
+        {
+            FindObjectOfType<ArkanoidsGameManager>().Restart();
+        }
     }
 
 }
