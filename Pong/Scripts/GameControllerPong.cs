@@ -34,17 +34,29 @@ public class GameControllerPong : MonoBehaviour
 
     void Start() {
         GetGameObjects();
-        playerOneScore = 0;
-        playerOneScoreText.SetText(playerOneScore.ToString());
-        playerTwoScore = 0;
-        playerTwoScoreText.SetText(playerTwoScore.ToString());
-        gameScreen.SetActive(true);
-        scoresCanvas.SetActive(true);
-        restartCanvas.SetActive(false);
+        SetPlayerScores();
+        ActivateGameEntities();
+        SetVictoryConditions();
+    }
+
+    private void SetVictoryConditions() {
         maxPoints = 5;
         if (PlayerPrefs.GetInt("maxPoints") != 0) {
             maxPoints = PlayerPrefs.GetInt("maxPoints");
         }
+    }
+
+    private void ActivateGameEntities() {
+        gameScreen.SetActive(true);
+        scoresCanvas.SetActive(true);
+        restartCanvas.SetActive(false);
+    }
+
+    private void SetPlayerScores() {
+        playerOneScore = 0;
+        playerOneScoreText.SetText(playerOneScore.ToString());
+        playerTwoScore = 0;
+        playerTwoScoreText.SetText(playerTwoScore.ToString());
     }
 
     private void GetGameObjects() {
@@ -60,10 +72,7 @@ public class GameControllerPong : MonoBehaviour
         playerOneScoreText.SetText(playerOneScore.ToString());
         if (playerOneScore == maxPoints) {
             winnerMessage.SetText("Player 1 Wins!");
-            scorePoints.SetText(playerOneScore + " - " + playerTwoScore);
-            gameScreen.SetActive(false);
-            scoresCanvas.SetActive(false);
-            restartCanvas.SetActive(true);
+            SetRestartScreen();
         }
     }
 
@@ -72,11 +81,15 @@ public class GameControllerPong : MonoBehaviour
         playerTwoScoreText.SetText(playerTwoScore.ToString());
         if (playerTwoScore == maxPoints) {
             winnerMessage.SetText("Player 2 Wins!");
-            scorePoints.SetText(playerOneScore + " - " + playerTwoScore);
-            gameScreen.SetActive(false);
-            scoresCanvas.SetActive(false);
-            restartCanvas.SetActive(true);
+            SetRestartScreen();
         }
+    }
+
+    private void SetRestartScreen() {
+        scorePoints.SetText(playerOneScore + " - " + playerTwoScore);
+        gameScreen.SetActive(false);
+        scoresCanvas.SetActive(false);
+        restartCanvas.SetActive(true);
     }
 
     public void Restart() {
