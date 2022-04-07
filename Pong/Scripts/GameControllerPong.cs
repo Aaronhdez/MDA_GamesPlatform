@@ -10,6 +10,14 @@ public class GameControllerPong : MonoBehaviour
     [SerializeField] private Transform ball;
     [SerializeField] public TextMeshProUGUI playerOneScoreText;
     [SerializeField] public TextMeshProUGUI playerTwoScoreText;
+    [SerializeField] public TextMeshProUGUI winnerMessage;
+    [SerializeField] public TextMeshProUGUI scorePoints;
+    [SerializeField] public GameObject gameScreen;
+    [SerializeField] public GameObject pauseScreen;
+    [SerializeField] public GameObject restartScreen;
+    [SerializeField] public GameObject scoresCanvas;
+    [SerializeField] public GameObject restartCanvas;
+    [SerializeField] private int maxPoints;
 
     public int playerOneScore = 0;
     public int playerTwoScore = 0;
@@ -25,20 +33,50 @@ public class GameControllerPong : MonoBehaviour
     }
 
     void Start() {
+        GetGameObjects();
         playerOneScore = 0;
         playerOneScoreText.SetText(playerOneScore.ToString());
         playerTwoScore = 0;
         playerTwoScoreText.SetText(playerTwoScore.ToString());
+        gameScreen.SetActive(true);
+        scoresCanvas.SetActive(true);
+        restartCanvas.SetActive(false);
+        maxPoints = 5;
+        if (PlayerPrefs.GetInt("maxPoints") != 0) {
+            maxPoints = PlayerPrefs.GetInt("maxPoints");
+        }
+    }
+
+    private void GetGameObjects() {
+        gameScreen = GameObject.Find("GameScreen");
+        pauseScreen = GameObject.Find("PauseScreen");
+        restartScreen = GameObject.Find("RestartScreen");
+        scoresCanvas = GameObject.Find("ScoreCanvas");
+        restartCanvas = GameObject.Find("RestartCanvas");
     }
 
     public void IncreasePlayerOneScore(int score) {
         playerOneScore += 1;
         playerOneScoreText.SetText(playerOneScore.ToString());
+        if (playerOneScore == maxPoints) {
+            winnerMessage.SetText("Player 1 Wins!");
+            scorePoints.SetText(playerOneScore + " - " + playerTwoScore);
+            gameScreen.SetActive(false);
+            scoresCanvas.SetActive(false);
+            restartCanvas.SetActive(true);
+        }
     }
 
     public void IncreasePlayerTwoScore(int score) {
         playerTwoScore += 1;
         playerTwoScoreText.SetText(playerTwoScore.ToString());
+        if (playerTwoScore == maxPoints) {
+            winnerMessage.SetText("Player 2 Wins!");
+            scorePoints.SetText(playerOneScore + " - " + playerTwoScore);
+            gameScreen.SetActive(false);
+            scoresCanvas.SetActive(false);
+            restartCanvas.SetActive(true);
+        }
     }
 
     public void Restart() {
