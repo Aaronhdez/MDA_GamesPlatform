@@ -39,17 +39,12 @@ public class GameControllerPong : MonoBehaviour
         SetVictoryConditions();
     }
 
-    private void SetVictoryConditions() {
-        maxPoints = 5;
-        if (PlayerPrefs.GetInt("maxPoints") != 0) {
-            maxPoints = PlayerPrefs.GetInt("maxPoints");
-        }
-    }
-
-    private void ActivateGameEntities() {
-        gameScreen.SetActive(true);
-        scoresCanvas.SetActive(true);
-        restartCanvas.SetActive(false);
+    private void GetGameObjects() {
+        gameScreen = GameObject.Find("GameScreen");
+        pauseScreen = GameObject.Find("PauseScreen");
+        restartScreen = GameObject.Find("RestartScreen");
+        scoresCanvas = GameObject.Find("ScoreCanvas");
+        restartCanvas = GameObject.Find("RestartCanvas");
     }
 
     private void SetPlayerScores() {
@@ -59,12 +54,17 @@ public class GameControllerPong : MonoBehaviour
         playerTwoScoreText.SetText(playerTwoScore.ToString());
     }
 
-    private void GetGameObjects() {
-        gameScreen = GameObject.Find("GameScreen");
-        pauseScreen = GameObject.Find("PauseScreen");
-        restartScreen = GameObject.Find("RestartScreen");
-        scoresCanvas = GameObject.Find("ScoreCanvas");
-        restartCanvas = GameObject.Find("RestartCanvas");
+    private void ActivateGameEntities() {
+        gameScreen.SetActive(true);
+        scoresCanvas.SetActive(true);
+        restartCanvas.SetActive(false);
+    }
+
+    private void SetVictoryConditions() {
+        maxPoints = 5;
+        if (PlayerPrefs.GetInt("maxPoints") != 0) {
+            maxPoints = PlayerPrefs.GetInt("maxPoints");
+        }
     }
 
     public void IncreasePlayerOneScore(int score) {
