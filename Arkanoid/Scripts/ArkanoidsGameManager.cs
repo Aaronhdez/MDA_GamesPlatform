@@ -11,31 +11,36 @@ public class ArkanoidsGameManager : MonoBehaviour
     private void Start()
     {
         var spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<AsteroidSpawner>();
-        Instantiate(playerPrefab, spawnManager.transform);
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerController = player.GetComponent<PlayerControllerArkanoid>();
-        
+        Spawn(spawnManager);
     }
     public void Restart()
     {
         this.lives--;
         if (this.lives < 0)
         {
-            GameOver();
+            DeathManager();
         } else
         {
-            GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<AsteroidSpawner>().PauseSpawn();
-            foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Asteroid"))
-            {
-                Destroy(gameObject);
-            }
-            Destroy(player);
+            DeathManager();
             Invoke(nameof(Respawn), this.respawnTime);
         }
         
+    }  
+    private void Respawn()
+    {
+        var spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<AsteroidSpawner>();
+        Spawn(spawnManager);
+        player.transform.position = Vector3.zero;
+        spawnManager.ResumeSpawn();
     }
 
-    private void GameOver()
+    private void Spawn(AsteroidSpawner spawnManager)
+    {
+        Instantiate(playerPrefab, spawnManager.transform);
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerControllerArkanoid>();
+    }
+    private void DeathManager()
     {
         GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<AsteroidSpawner>().PauseSpawn();
         foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Asteroid"))
@@ -44,15 +49,4 @@ public class ArkanoidsGameManager : MonoBehaviour
         }
         Destroy(player);
     }
-
-    private void Respawn()
-    {
-        var spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<AsteroidSpawner>();
-        Instantiate(playerPrefab, spawnManager.transform);
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerController = player.GetComponent<PlayerControllerArkanoid>();
-        player.transform.position = Vector3.zero;
-        spawnManager.ResumeSpawn();
-    }
-
 }
