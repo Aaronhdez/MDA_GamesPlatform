@@ -8,6 +8,7 @@ public class Asteroid : MonoBehaviour
     public float minSize = 0.5f;
     public float maxSize = 1.5f;
     public float speed = 50.0f;
+
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidbody;
     private Vector3 playerPosition;
@@ -34,15 +35,12 @@ public class Asteroid : MonoBehaviour
         _rigidbody.AddForce(direction* this.speed);
     }
 
-    public void Update() {
-        Destroy();
-    }
-
-    public void Destroy() {
-        if (Vector3.Distance(playerPosition, transform.position) >15.0f) {
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boundaries"))
+        {
             Destroy(gameObject);
         }
     }
-
-    
 }
+
