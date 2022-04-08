@@ -44,7 +44,7 @@ public class BallScriptBreakout : MonoBehaviour
 	void Update () 
     {
 		//If The player pressed Space button & The ball is not inPlay (in moving)  & The game can start
-        if (Input.GetButtonDown("Jump") && ballInPlay == false && GameManagerScriptBreakout.startGame)
+        if (Input.GetButtonDown("Jump") && ballInPlay == false )
         {
             transform.parent = null;	//Disconnect the Ball from the Paddle
 			ballInPlay = true;		//The Ball is inPlay (is moving)
