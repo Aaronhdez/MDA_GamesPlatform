@@ -15,6 +15,10 @@ public class SceneSelector : MonoBehaviour {
         SceneManager.LoadScene("MainScenePong");
     }
 
+    public void ReloadPongScene() {
+        SceneManager.LoadScene("MainScenePong");
+    }
+
     public void LoadMenuPongScene() {
         SceneManager.LoadScene("MenuScenePong");
     }
