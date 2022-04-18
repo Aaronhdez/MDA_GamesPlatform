@@ -71,17 +71,18 @@ public class PlayerControllerArkanoid : MonoBehaviour
  
        
     }
-    private void Shoot()
-    {
-        Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
-        bullet.Project(this.transform.up);
-    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Asteroid")
         {
             FindObjectOfType<ArkanoidsGameManager>().Restart();
         }
+    }
+    public void Shoot()
+    {
+        Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
+        bullet.Project(this.transform.up);
     }
 
 }

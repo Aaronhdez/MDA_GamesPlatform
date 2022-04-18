@@ -41,6 +41,29 @@ public class Asteroid : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else if (collision.gameObject.CompareTag("Bullet"))
+        {
+            AsteroidDestruction(gameObject);
+        }
+    }
+
+    private void AsteroidDestruction(GameObject gameObject)
+    {
+        if (this.size * 0.5f >= this.minSize)
+        {
+            CreateSplit();
+            CreateSplit();
+        }
+        Destroy(this.gameObject);
+    }
+
+    private void CreateSplit()
+    {
+        Vector2 position = this.transform.position;
+        position *= Random.insideUnitCircle * 0.5f;
+        Asteroid split = Instantiate(this, position, this.transform.rotation);
+        split.size = this.size * 0.5f;
+        split.SetTrajectory(Random.insideUnitCircle.normalized);
     }
 }
 
