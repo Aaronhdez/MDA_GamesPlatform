@@ -21,7 +21,7 @@ public class Asteroid : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        playerPosition = GameObject.Find("Player").transform.position;   
+        playerPosition = GameObject.Find("Player(Clone)").transform.position;   
 
         _spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
         this.transform.eulerAngles = new Vector3(0.0f,0.0f,Random.value * 360.0f);

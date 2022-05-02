@@ -263,12 +263,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 806970216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09690a62e3a86c041b81731d43b01f99, type: 3}
+  m_Script: {fileID: 11500000, guid: 67f1f9cce689cd744b55a296dc094d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerPrefab: {fileID: 2491291937976899886, guid: 249f98366d33a1a4e8e8035636d84352, type: 3}
-  playerController: {fileID: 0}
+  player: {fileID: 2491291937976899886, guid: 721672bd13f633141ad39cf3f2e5a1aa, type: 3}
+  playerPrefab: {fileID: 2491291937976899886, guid: 721672bd13f633141ad39cf3f2e5a1aa, type: 3}
+  playerController: {fileID: 2491291937976899883, guid: 721672bd13f633141ad39cf3f2e5a1aa, type: 3}
   lives: 3
   respawnTime: 3
 --- !u!4 &806970218
@@ -482,14 +482,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1595180449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf54e1f3ffe2ff4ab5106ff148f2214, type: 3}
+  m_Script: {fileID: 11500000, guid: fdd49b18ba9892a42aabe1638bf19046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidPrefab: {fileID: -3352373446220928809, guid: 1ed73c2a80bd0164b99cd0834e47ee50, type: 3}
+  asteroidPrefab: {fileID: -3352373446220928809, guid: 433ed0570f0a46b4ca084c9ad62f88bd, type: 3}
   trajectoryVariance: 15
   spawnRate: 2
-  spawnAmount: 3
-  spawnDistance: 12.5
+  spawnAmount: 1
+  spawnDistance: 15
 --- !u!4 &1595180451
 Transform:
   m_ObjectHideFlags: 0

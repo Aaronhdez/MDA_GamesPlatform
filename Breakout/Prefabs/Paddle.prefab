@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a1f576eed2f8d417cb975329ba2929bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f5a8f9afbe40504ab65b00f9cd3b80b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_Size: {x: 0.22, y: 0.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!58 &58584936215809686
@@ -132,13 +132,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1117396132159972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c3864ce1febae94eb34bfbe463be213, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7f561b486ddf74291e3745a243b5d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ballInitialVelocity: 600
   txtScore: {fileID: 0}
-  sfxBrickHit: {fileID: 0}
-  sfxPaddleBorderHit: {fileID: 0}
+  sfxBrickHit: {fileID: 8300000, guid: 50645d39a518a430a8ab17d0ff516e17, type: 3}
+  sfxPaddleBorderHit: {fileID: 8300000, guid: 7ee93d4c0720045798bbbb1c76c4d674, type: 3}
 --- !u!82 &82914877035386400
 AudioSource:
   m_ObjectHideFlags: 0
@@ -310,7 +310,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 17f0a36c705c044d2adb88c5ef73efbc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b1832ab65f8fdf4faccad9b93a3cb73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -318,7 +318,7 @@ SpriteRenderer:
   m_Size: {x: 1.04, y: 0.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!70 &70675906808648224
@@ -367,10 +367,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1570120126594978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9d4e766b53fd69438d9de8a94368be9, type: 3}
+  m_Script: {fileID: 11500000, guid: b25a48de82a5318408d69ebc506ec19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   boundary:
-    xMin: 0
-    xMax: 0
-  paddleSpeed: 0
+    xMin: -6
+    xMax: 6
+  paddleSpeed: 5

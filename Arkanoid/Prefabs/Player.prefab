@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e49b907ce68367c4296e8ea36cd09997, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 58748480a94f11342b3aac87bcbcf1b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -125,8 +125,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5}
-    newSize: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2491291937976899886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a71a8a8797119914586210ce15a05dfd, type: 3}
+  m_Script: {fileID: 11500000, guid: 935e235c2422d034b9063f30cc5f6807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
@@ -154,7 +154,7 @@ MonoBehaviour:
   lowerLimit: 0
   leftLimit: 0
   rightLimit: 0
-  bulletPrefab: {fileID: -7131003045750375158, guid: eab5ae8a9ba6c4848996c12e30abdf59, type: 3}
+  bulletPrefab: {fileID: -7131003045750375158, guid: 91b809c458aa68a418eec4f68863ffd9, type: 3}
 --- !u!114 &-2060559782384041269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2491291937976899886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdcf4e71e10fa2b4a917aed06eabbe10, type: 3}
+  m_Script: {fileID: 11500000, guid: e28050ed55c1a5449bde9a2bc1b29861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2734011697122988475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdcf4e71e10fa2b4a917aed06eabbe10, type: 3}
+  m_Script: {fileID: 11500000, guid: e28050ed55c1a5449bde9a2bc1b29861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
