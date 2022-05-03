@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -12,6 +10,7 @@ public class GameControllerPong : MonoBehaviour
     [SerializeField] public TextMeshProUGUI playerTwoScoreText;
     [SerializeField] public TextMeshProUGUI winnerMessage;
     [SerializeField] public TextMeshProUGUI scorePoints;
+    [SerializeField] public SoundControllerPong soundController;
     [SerializeField] public GameObject gameScreen;
     [SerializeField] public GameObject pauseScreen;
     [SerializeField] public GameObject restartScreen;
@@ -39,6 +38,7 @@ public class GameControllerPong : MonoBehaviour
         SetVictoryConditions();
     }
 
+        
     private void GetGameObjects() {
         gameScreen = GameObject.Find("GameScreen");
         pauseScreen = GameObject.Find("PauseScreen");
@@ -70,7 +70,11 @@ public class GameControllerPong : MonoBehaviour
     public void IncreasePlayerOneScore(int score) {
         playerOneScore += 1;
         playerOneScoreText.SetText(playerOneScore.ToString());
+        if(playerOneScore < maxPoints) {
+            soundController.PlayPointSound();
+        }
         if (playerOneScore == maxPoints) {
+            soundController.PlayVictorySound();
             winnerMessage.SetText("Player 1 Wins!");
             SetRestartScreen();
         }
@@ -79,7 +83,11 @@ public class GameControllerPong : MonoBehaviour
     public void IncreasePlayerTwoScore(int score) {
         playerTwoScore += 1;
         playerTwoScoreText.SetText(playerTwoScore.ToString());
+        if (playerOneScore < maxPoints) {
+            soundController.PlayPointSound();
+        }
         if (playerTwoScore == maxPoints) {
+            soundController.PlayVictorySound();
             winnerMessage.SetText("Player 2 Wins!");
             SetRestartScreen();
         }
