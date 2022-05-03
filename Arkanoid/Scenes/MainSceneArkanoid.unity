@@ -482,14 +482,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1595180449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdd49b18ba9892a42aabe1638bf19046, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d16f05b5ef85ab49bc946b0ffb4784e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidPrefab: {fileID: -3352373446220928809, guid: 433ed0570f0a46b4ca084c9ad62f88bd, type: 3}
-  trajectoryVariance: 15
-  spawnRate: 2
-  spawnAmount: 1
-  spawnDistance: 15
 --- !u!4 &1595180451
 Transform:
   m_ObjectHideFlags: 0

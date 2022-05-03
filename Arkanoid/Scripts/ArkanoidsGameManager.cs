@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ArkanoidsGameManager : MonoBehaviour
@@ -8,9 +9,10 @@ public class ArkanoidsGameManager : MonoBehaviour
     public PlayerControllerArkanoid playerController;
     public int lives = 3;
     public float respawnTime = 3.0f;
+    public int paused = 0;
     private void Start()
     {
-        var spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<AsteroidSpawner>();
+        var spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<AsteroidSpawnerArkanoids>();
         Spawn(spawnManager);
     }
     public void Restart()
@@ -19,22 +21,36 @@ public class ArkanoidsGameManager : MonoBehaviour
         if (this.lives < 0)
         {
             DeathManager();
-        } else
+        }
+        else
         {
             DeathManager();
             Invoke(nameof(Respawn), this.respawnTime);
         }
-        
-    }  
+
+    }
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && paused == 0)
+        {
+            paused = 1;
+            FreezeGame();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && paused == 1)
+        {
+            paused = 0;
+            UnfreezeGame();
+        }
+    }
     private void Respawn()
     {
-        var spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<AsteroidSpawner>();
+        var spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<AsteroidSpawnerArkanoids>();
         Spawn(spawnManager);
         player.transform.position = Vector3.zero;
         spawnManager.ResumeSpawn();
     }
 
-    private void Spawn(AsteroidSpawner spawnManager)
+    private void Spawn(AsteroidSpawnerArkanoids spawnManager)
     {
         Instantiate(playerPrefab, spawnManager.transform);
         player = GameObject.FindGameObjectWithTag("Player");
@@ -42,11 +58,52 @@ public class ArkanoidsGameManager : MonoBehaviour
     }
     private void DeathManager()
     {
-        GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<AsteroidSpawner>().PauseSpawn();
+        GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<AsteroidSpawnerArkanoids>().PauseSpawn();
         foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Asteroid"))
         {
             Destroy(gameObject);
         }
         Destroy(player);
+    }
+    private void FreezeGame()
+    {
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Asteroid"))
+        {
+            ((FreezeableArkanoids)gameObject.GetComponent<AsteroidControllerArkanoids>()).freeze();
+        }
+
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Bullet"))
+        {
+            ((FreezeableArkanoids)gameObject.GetComponent<BulletControllerArkanoids>()).freeze();
+        }
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            ((FreezeableArkanoids)gameObject.GetComponent<PlayerControllerArkanoid>()).freeze();
+        }
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("SpawnManager"))
+        {
+            ((FreezeableArkanoids)gameObject.GetComponent<AsteroidSpawnerArkanoids>()).freeze();
+        }
+
+    }
+    private void UnfreezeGame()
+    {
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            ((FreezeableArkanoids)gameObject.GetComponent<PlayerControllerArkanoid>()).unfreeze();
+        }
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Bullet"))
+        {
+            ((FreezeableArkanoids)gameObject.GetComponent<BulletControllerArkanoids>()).unfreeze();
+        }
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("SpawnManager"))
+        {
+            ((FreezeableArkanoids)gameObject.GetComponent<AsteroidSpawnerArkanoids>()).unfreeze();
+        }
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Asteroid"))
+        {
+            ((FreezeableArkanoids)gameObject.GetComponent<AsteroidControllerArkanoids>()).unfreeze();
+
+        }
     }
 }

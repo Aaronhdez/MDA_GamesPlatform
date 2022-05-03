@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControllerArkanoid : MonoBehaviour
+public class PlayerControllerArkanoid : MonoBehaviour, FreezeableArkanoids
 {
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float torqueSpeed = 1.0f;
@@ -13,7 +13,8 @@ public class PlayerControllerArkanoid : MonoBehaviour
     [SerializeField] private float lowerLimit;
     [SerializeField] private float leftLimit;
     [SerializeField] private float rightLimit;
-    public Bullet bulletPrefab;
+    public BulletControllerArkanoids bulletPrefab;
+    public int paused = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -22,17 +23,23 @@ public class PlayerControllerArkanoid : MonoBehaviour
         lowerLimit = GameObject.Find("PlayerLowerBoundary").transform.position.y + 1;
         leftLimit = GameObject.Find("PlayerLeftBoundary").transform.position.x + 1;
         rightLimit = GameObject.Find("PlayerRightBoundary").transform.position.x - 1;
+        var originalRigid = gameObject.GetComponent<Rigidbody2D>().constraints;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        MovePlayer();
-        PointToMouse();
-        if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if(paused == 0)
         {
-            Shoot();
+            MovePlayer();
+            PointToMouse();
+
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            {
+                Shoot();
+            }
         }
+            
     }
 
     
@@ -47,7 +54,9 @@ public class PlayerControllerArkanoid : MonoBehaviour
     private float MoveX(Vector2 playerPosition)
     {
         var inputX = Input.GetAxisRaw("Horizontal");
-        float movementX = inputX * speed * Time.deltaTime;
+        float movementX;
+        movementX = inputX * speed * Time.deltaTime;
+    
         playerPosition.x = Mathf.Clamp(playerPosition.x + movementX, leftLimit, rightLimit);
         return playerPosition.x;
     }
@@ -55,7 +64,8 @@ public class PlayerControllerArkanoid : MonoBehaviour
     private float MoveY(Vector2 playerPosition)
     {
         var inputY = Input.GetAxisRaw("Vertical");
-        float movementY = inputY * speed * Time.deltaTime;
+        float movementY;
+        movementY = inputY * speed * Time.deltaTime;
         playerPosition.y = Mathf.Clamp(playerPosition.y + movementY, lowerLimit, upperLimit);
         return playerPosition.y;
     }
@@ -81,8 +91,19 @@ public class PlayerControllerArkanoid : MonoBehaviour
     }
     public void Shoot()
     {
-        Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
+        BulletControllerArkanoids bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
         bullet.Project(this.transform.up);
     }
 
+    public void freeze()
+    {
+        paused = 1;
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
+    public void unfreeze()
+    {
+        paused = 0;
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+    }
 }
