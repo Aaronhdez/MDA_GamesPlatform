@@ -14,43 +14,7 @@ public class StyleControllerPong : MonoBehaviour
     private Dictionary<string, List<Color>> colorCodes;
 
     public void Start() {
-        colorCodes = new Dictionary<string, List<Color>>();
-        colorCodes.Add("default", 
-            new List<Color> { 
-                Color.black,
-                Color.white
-            }
-        );
-        colorCodes.Add("space",
-            new List<Color> {
-                Color.black,
-                new Color(0.5f, 0.85f, 1f, 1f),
-            }
-        );
-        colorCodes.Add("matrix",
-            new List<Color> {
-                Color.black,
-                Color.green,
-            }
-        );
-        colorCodes.Add("protanophia", // -> R
-            new List<Color> {
-                new Color(0.03f, 0.33f, 0.43f, 1f),
-                new Color(0.74f, 0.66f, 0f, 1f)
-            }
-        );
-        colorCodes.Add("deuteranophia", // -> G
-            new List<Color> {
-                new Color(0.08f, 0.54f, 0.74f, 1f),
-                new Color(0.74f, 0.66f, 0f, 1f)
-            }
-        );
-        colorCodes.Add("trianophia", // -> B
-            new List<Color> {
-                new Color(0f, 0.40f, 0.40f, 1f),
-                new Color(1f, 0.40f, 0.40f, 1f)
-            }
-        );
+        colorCodes = ColorPalettes.Instance();
     }
 
     public void SetColorStyle() {
