@@ -20,6 +20,7 @@ public class SceneSelector : MonoBehaviour {
     }
 
     public void LoadMenuPongScene() {
+        PlayerPrefs.SetString("pongStyleCode", "default");
         SceneManager.LoadScene("MenuScenePong");
     }
 

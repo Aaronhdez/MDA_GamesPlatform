@@ -13,14 +13,10 @@ public class StyleControllerPong : MonoBehaviour
     public Camera camera;
     private Dictionary<string, List<Color>> colorCodes;
 
-    public void Start() {
-        colorCodes = ColorPalettes.Instance();
-    }
-
     public void SetColorStyle() {
         camera.clearFlags = CameraClearFlags.SolidColor;
-        PlayerPrefs.SetString("styleCode", "matrix");
-        List<Color> palette = colorCodes[PlayerPrefs.GetString("styleCode")];
+        colorCodes = ColorPalettes.Instance();
+        List<Color> palette = colorCodes[PlayerPrefs.GetString("pongStyleCode")];
         SetColorsFrom(palette);
     }
 
