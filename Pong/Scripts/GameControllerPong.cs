@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class GameControllerPong : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameControllerPong : MonoBehaviour
     [SerializeField] public TextMeshProUGUI winnerMessage;
     [SerializeField] public TextMeshProUGUI scorePoints;
     [SerializeField] public SoundControllerPong soundController;
+    [SerializeField] public StyleControllerPong styleController;
     [SerializeField] public GameObject gameScreen;
     [SerializeField] public GameObject pauseScreen;
     [SerializeField] public GameObject restartScreen;
@@ -33,18 +35,23 @@ public class GameControllerPong : MonoBehaviour
 
     void Start() {
         GetGameObjects();
+        SetStyles();
         SetPlayerScores();
         ActivateGameEntities();
         SetVictoryConditions();
     }
 
-        
     private void GetGameObjects() {
+        styleController = GetComponent<StyleControllerPong>();
         gameScreen = GameObject.Find("GameScreen");
         pauseScreen = GameObject.Find("PauseScreen");
         restartScreen = GameObject.Find("RestartScreen");
         scoresCanvas = GameObject.Find("ScoreCanvas");
         restartCanvas = GameObject.Find("RestartCanvas");
+    }
+
+    private void SetStyles() {
+        styleController.SetColorStyle();
     }
 
     private void SetPlayerScores() {
