@@ -11,7 +11,6 @@ public class ConditionsController : MonoBehaviour
     public void SetVictoryConditions() {
         int points = int.Parse(pointsDropdown.captionText.text);
         PlayerPrefs.SetInt("maxPoints", points);
-        Debug.Log(PlayerPrefs.GetInt("maxPoints"));
     }
 
     public void SetColorPalette() {
