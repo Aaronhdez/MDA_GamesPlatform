@@ -18,11 +18,13 @@ public class GameControllerPong : MonoBehaviour
     [SerializeField] public GameObject restartScreen;
     [SerializeField] public GameObject scoresCanvas;
     [SerializeField] public GameObject restartCanvas;
+    [SerializeField] public GameObject pauseCanvas;
     [SerializeField] private int maxPoints;
 
     public int playerOneScore = 0;
     public int playerTwoScore = 0;
     public static GameControllerPong instance;
+    public bool isPaused = false;
 
     public static GameControllerPong Instance {
         get {
@@ -41,6 +43,28 @@ public class GameControllerPong : MonoBehaviour
         SetVictoryConditions();
     }
 
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.P)) {
+            if (!isPaused) {
+                PauseGame();
+            } else {
+                ResumeGame();
+            }
+        }        
+    }
+
+    private void PauseGame() {
+        isPaused = true;
+        Time.timeScale = 0;
+        pauseCanvas.SetActive(true);
+    }
+
+    private void ResumeGame() {
+        isPaused = false;
+        Time.timeScale = 1;
+        pauseCanvas.SetActive(false);
+    }
+
     private void GetGameObjects() {
         styleController = GetComponent<StyleControllerPong>();
         gameScreen = GameObject.Find("GameScreen");
@@ -48,6 +72,7 @@ public class GameControllerPong : MonoBehaviour
         restartScreen = GameObject.Find("RestartScreen");
         scoresCanvas = GameObject.Find("ScoreCanvas");
         restartCanvas = GameObject.Find("RestartCanvas");
+        pauseCanvas = GameObject.Find("PauseCanvas");
     }
 
     private void SetStyles() {
@@ -65,6 +90,7 @@ public class GameControllerPong : MonoBehaviour
         gameScreen.SetActive(true);
         scoresCanvas.SetActive(true);
         restartCanvas.SetActive(false);
+        pauseCanvas.SetActive(false);
     }
 
     private void SetVictoryConditions() {
