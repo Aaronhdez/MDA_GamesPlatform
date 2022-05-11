@@ -2833,7 +2833,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38392a3b67acd454aa11d01db9232004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropdown: {fileID: 1744145042}
+  pointsDropdown: {fileID: 0}
+  colorDropdown: {fileID: 0}
 --- !u!1 &1810269251
 GameObject:
   m_ObjectHideFlags: 0
@@ -3512,7 +3513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38392a3b67acd454aa11d01db9232004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropdown: {fileID: 2035730543}
+  pointsDropdown: {fileID: 1744145042}
+  colorDropdown: {fileID: 2035730543}
 --- !u!114 &2035730543
 MonoBehaviour:
   m_ObjectHideFlags: 0

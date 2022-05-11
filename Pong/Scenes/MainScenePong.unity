@@ -206,7 +206,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: a5b624ffa7872104697d199b293c36cb, type: 2}
+  m_Material: {fileID: 6200000, guid: 41b02569d5862d5459c5b3e2110c88ba, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -297,14 +297,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 59815333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f20d1a57f2d7c854ea4f6183166aa0bf, type: 3}
+  m_Script: {fileID: 11500000, guid: bceb8e9eb2bed984389b6c1aa4a41b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   initialVelocity: 4
   maximumVelocity: 0
   currentVelocity: 0
   multiplier: 0
-  ballRb: {fileID: 59815335}
+  ballRb: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!82 &59815339
 AudioSource:
@@ -316,7 +316,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 56e18f723ce814873b93dd737aa16aba, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 64558d28f26a1444d9b371e720e36579, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.75
   m_Pitch: 1
@@ -517,7 +517,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 85794358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25eb5bf49c8943a4486b7bba1fb36bc8, type: 3}
+  m_Script: {fileID: 11500000, guid: dfc5a20676d4d64498b06c0d6cf35b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &85794361
@@ -642,7 +642,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2926e2190214043fa813d593ede29c10, type: 3}
+  m_audioClip: {fileID: 8300000, guid: dd4132780250fd64f8b545d948a07052, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -737,7 +737,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 95973079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd6d08c558f478242a99678d179945c6, type: 3}
+  m_Script: {fileID: 11500000, guid: af91f64e3a8af3f48b04740cac2e433b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointSound: {fileID: 95973080}
@@ -1319,7 +1319,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 393274393}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25eb5bf49c8943a4486b7bba1fb36bc8, type: 3}
+  m_Script: {fileID: 11500000, guid: dfc5a20676d4d64498b06c0d6cf35b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!222 &393274398
@@ -1373,11 +1373,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 427568753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a96ecf280e5e98640ac7e2f6890e4313, type: 3}
+  m_Script: {fileID: 11500000, guid: e1aa22475db6d36449452b95de0fa814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  isPlayer: 0
+  isPlayer: 1
   isHuman: 1
   mode: 
   upperLimit: 0
@@ -2108,11 +2108,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1067101195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a96ecf280e5e98640ac7e2f6890e4313, type: 3}
+  m_Script: {fileID: 11500000, guid: e1aa22475db6d36449452b95de0fa814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  isPlayer: 1
+  isPlayer: 0
   isHuman: 1
   mode: 
   upperLimit: 0
@@ -2336,7 +2336,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1313353074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd6d08c558f478242a99678d179945c6, type: 3}
+  m_Script: {fileID: 11500000, guid: af91f64e3a8af3f48b04740cac2e433b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointSound: {fileID: 1313353076}
@@ -2350,7 +2350,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f8b332255e432466bbea7faf598190d0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cd17394f71a487441b9f6d7d371c5d69, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2630,7 +2630,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1495287191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f361c9c5f1d69438a29c493e4f9250, type: 3}
+  m_Script: {fileID: 11500000, guid: d3a30a384b31f9646811a2ecd7d975e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerOne: {fileID: 1067101196}
@@ -2641,14 +2641,14 @@ MonoBehaviour:
   winnerMessage: {fileID: 2110769096}
   scorePoints: {fileID: 1379462394}
   soundController: {fileID: 1704953955}
-  styleController: {fileID: 0}
+  styleController: {fileID: 1495287194}
   gameScreen: {fileID: 0}
   pauseScreen: {fileID: 0}
   restartScreen: {fileID: 0}
-  scoresCanvas: {fileID: 0}
-  restartCanvas: {fileID: 0}
-  pauseCanvas: {fileID: 0}
-  maxPoints: 2
+  scoresCanvas: {fileID: 1707904058}
+  restartCanvas: {fileID: 1098659749}
+  pauseCanvas: {fileID: 1122698427}
+  maxPoints: 0
   playerOneScore: 0
   playerTwoScore: 0
   isPaused: 0
@@ -2661,28 +2661,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1495287191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a08026eb82f1834bacc896d45fdcd58, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a174d6803dcf194a9812b35ad7b94dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   styleCode: 
   objectsInColor1:
   - {fileID: 648517359}
   - {fileID: 793395911}
-  - {fileID: 1239961621}
   - {fileID: 210396787}
   - {fileID: 1726978810}
-  - {fileID: 59815333}
+  - {fileID: 1239961621}
   - {fileID: 427568753}
   - {fileID: 1067101195}
+  - {fileID: 59815333}
   buttonsInColor1:
-  - {fileID: 85794358}
   - {fileID: 393274393}
+  - {fileID: 85794358}
   textsInColor1:
+  - {fileID: 1379462394}
   - {fileID: 907025940}
   - {fileID: 924529725}
-  - {fileID: 2110769096}
-  - {fileID: 1379462394}
   - {fileID: 1721445896}
+  - {fileID: 2110769096}
   camera: {fileID: 340901258}
 --- !u!82 &1495287195
 AudioSource:
@@ -2694,7 +2694,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f8b332255e432466bbea7faf598190d0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cd17394f71a487441b9f6d7d371c5d69, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2852,7 +2852,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1704953953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665a7feb4cf9b5b4199261b572532c51, type: 3}
+  m_Script: {fileID: 11500000, guid: e146d3296a7b900439bb15fa87a14212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   victorySound: {fileID: 1313353076}
