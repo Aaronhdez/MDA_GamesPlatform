@@ -19,7 +19,6 @@ public class AsteroidSpawnerArkanoids : MonoBehaviour, FreezeableArkanoids
     {
         if (paused == 1)
         {
-            Debug.Log("paused");
             return;
         } 
        for (int i = 0; i < spawnAmount; i++)

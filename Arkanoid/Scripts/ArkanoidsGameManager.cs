@@ -10,25 +10,21 @@ public class ArkanoidsGameManager : MonoBehaviour
     public int lives = 3;
     public float respawnTime = 3.0f;
     public int paused = 0;
+    public GameObject gameovertext;
     private void Start()
     {
+        gameovertext.SetActive(false);
         var spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<AsteroidSpawnerArkanoids>();
         Spawn(spawnManager);
     }
     public void Restart()
     {
         this.lives--;
-        if (this.lives < 0)
-        {
-            DeathManager();
-        }
-        else
-        {
-            DeathManager();
-            Invoke(nameof(Respawn), this.respawnTime);
-        }
-
+        checkLives();
     }
+
+    
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && paused == 0)
@@ -40,6 +36,12 @@ public class ArkanoidsGameManager : MonoBehaviour
         {
             paused = 0;
             UnfreezeGame();
+        }
+        if(this.lives < 0 && Input.GetKeyDown(KeyCode.Return))
+        {
+            lives = 3;
+            gameovertext.SetActive(false);
+            checkLives();
         }
     }
     private void Respawn()
@@ -104,6 +106,19 @@ public class ArkanoidsGameManager : MonoBehaviour
         {
             ((FreezeableArkanoids)gameObject.GetComponent<AsteroidControllerArkanoids>()).unfreeze();
 
+        }
+    }
+    private void checkLives()
+    {
+        if (this.lives < 0)
+        {
+            DeathManager();
+            gameovertext.SetActive(true);
+        }
+        else
+        {
+            DeathManager();
+            Invoke(nameof(Respawn), this.respawnTime);
         }
     }
 }
