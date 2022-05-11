@@ -41,8 +41,6 @@ public class PlayerControllerArkanoid : MonoBehaviour, FreezeableArkanoids
         }
             
     }
-
-    
     private void MovePlayer()
     {
         Vector2 playerPosition = transform.position;
