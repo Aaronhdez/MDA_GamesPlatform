@@ -7,7 +7,7 @@ public class AsteroidControllerArkanoids : MonoBehaviour, FreezeableArkanoids
     public float size = 1.0f;
     public float minSize = 0.5f;
     public float maxSize = 1.5f;
-    public float speed = 50.0f;
+    public float speed = 40.0f;
     public int paused = 0;
 
     private SpriteRenderer _spriteRenderer;
