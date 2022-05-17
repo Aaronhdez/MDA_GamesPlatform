@@ -21,7 +21,7 @@ using UnityEngine.UI;
 public class BallScriptBreakout : MonoBehaviour 
 {
 	//Public Variables will appear in the Inspector 
-    public float ballInitialVelocity = 600f;	//The initial velocity of the Ball
+    public float ballInitialVelocity = 200;	//The initial velocity of the Ball
     public Text txtScore;	//Connected to the Score text
     public AudioClip sfxBrickHit;	//Connected to SFX of the Brick Hit
 	public AudioClip sfxPaddleBorderHit;	//Connected to SFX of the Paddle Border Hit
@@ -44,7 +44,7 @@ public class BallScriptBreakout : MonoBehaviour
 	void Update () 
     {
 		//If The player pressed Space button & The ball is not inPlay (in moving)  & The game can start
-        if (Input.GetButtonDown("Jump") && ballInPlay == false )
+        if (Input.GetButtonDown("Jump") && ballInPlay == false && GameManagerScriptBreakout.startGame)
         {
             transform.parent = null;	//Disconnect the Ball from the Paddle
 			ballInPlay = true;		//The Ball is inPlay (is moving)

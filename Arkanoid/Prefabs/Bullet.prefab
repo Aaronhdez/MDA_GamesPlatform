@@ -115,11 +115,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8380709923484582491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdcf4e71e10fa2b4a917aed06eabbe10, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cdfba08594d76646bee74b955c6d97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
   maxLifeTime: 10
+  direccion: {x: 0, y: 0}
 --- !u!61 &4699987063881747282
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -130,7 +131,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

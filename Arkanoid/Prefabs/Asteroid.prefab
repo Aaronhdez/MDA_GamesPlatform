@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 9104370193905760142}
   - component: {fileID: 767766315061727304}
   - component: {fileID: -3352373446220928809}
-  - component: {fileID: 4601448953766335191}
   m_Layer: 7
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -75,12 +74,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bc0ebac591d0ccf4f9f124ee6ecf998e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60e5a3185a2d96e4b8de09c51d0add90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -124,8 +123,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -142,32 +141,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 733236020234670249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84905962d7baf6d4088534d71c92027b, type: 3}
+  m_Script: {fileID: 11500000, guid: 36b79cb8b2ff35a4a8b984704086b073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: bc0ebac591d0ccf4f9f124ee6ecf998e, type: 3}
-  - {fileID: 21300000, guid: 5a1917322cb295449bf7552a48bba38e, type: 3}
-  - {fileID: 21300000, guid: 858c9cd8f5aa40c4eb8f181d3a3d0e50, type: 3}
-  - {fileID: 21300000, guid: b3b84f8ff9ae1104cbcc0c1a9308590c, type: 3}
-  size: 1
+  - {fileID: 21300000, guid: 60e5a3185a2d96e4b8de09c51d0add90, type: 3}
+  - {fileID: 21300000, guid: 7a1757e4801f5b84e8fed8263c36efaf, type: 3}
+  - {fileID: 21300000, guid: 7a1757e4801f5b84e8fed8263c36efaf, type: 3}
+  - {fileID: 21300000, guid: fc6f91ca29cce6f4d9df6d60c47b1744, type: 3}
+  size: 2
   minSize: 0.5
-  maxSize: 1.5
-  speed: 50
---- !u!114 &4601448953766335191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733236020234670249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf54e1f3ffe2ff4ab5106ff148f2214, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroidPrefab: {fileID: -3352373446220928809}
-  trajectoryVariance: 15
-  spawnRate: 2
-  spawnAmount: 1
-  spawnDistance: 15
+  maxSize: 2
+  speed: 25
+  paused: 0
