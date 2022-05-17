@@ -18,7 +18,7 @@ public class PauseMenuScriptBreakout : MonoBehaviour {
         }
     }
 
-    void Resume() {
+    public void Resume() {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
@@ -29,4 +29,5 @@ public class PauseMenuScriptBreakout : MonoBehaviour {
         Time.timeScale = 0f;
         gameIsPaused = true;
     }
+
 }

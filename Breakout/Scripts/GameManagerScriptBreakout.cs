@@ -40,7 +40,7 @@ public class GameManagerScriptBreakout : MonoBehaviour
         {
 			startGame = false;		//Turn Start Game boolean to false
 			gameOver = false;		//Turn Game Over boolean to false
-            SceneManager.LoadScene("MainGame");		//Load Main Game Scene
+            SceneManager.LoadScene("mainSceneBreakout");		//Load Main Game Scene
         }
 	}
 }

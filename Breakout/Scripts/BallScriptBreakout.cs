@@ -21,7 +21,7 @@ using UnityEngine.UI;
 public class BallScriptBreakout : MonoBehaviour 
 {
 	//Public Variables will appear in the Inspector 
-    public float ballInitialVelocity = 600f;	//The initial velocity of the Ball
+    public float ballInitialVelocity = 200;	//The initial velocity of the Ball
     public Text txtScore;	//Connected to the Score text
     public AudioClip sfxBrickHit;	//Connected to SFX of the Brick Hit
 	public AudioClip sfxPaddleBorderHit;	//Connected to SFX of the Paddle Border Hit

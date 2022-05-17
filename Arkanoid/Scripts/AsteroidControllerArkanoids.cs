@@ -61,7 +61,7 @@ public class AsteroidControllerArkanoids : MonoBehaviour, FreezeableArkanoids
     private void CreateSplit()
     {
         Vector2 position = this.transform.position;
-        position *= Random.insideUnitCircle * 0.5f;
+        position += Random.insideUnitCircle * 0.5f;
         AsteroidControllerArkanoids split = Instantiate(this, position, this.transform.rotation);
         split.size = this.size * 0.5f;
         split.SetTrajectory(Random.insideUnitCircle.normalized);

@@ -141,15 +141,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 733236020234670249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aea40f70791d93a40a2ba5cc901dc5e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 36b79cb8b2ff35a4a8b984704086b073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: 21300000, guid: 60e5a3185a2d96e4b8de09c51d0add90, type: 3}
   - {fileID: 21300000, guid: 7a1757e4801f5b84e8fed8263c36efaf, type: 3}
-  - {fileID: 21300000, guid: 882baad7090acf7478cd0b75f3ad3495, type: 3}
+  - {fileID: 21300000, guid: 7a1757e4801f5b84e8fed8263c36efaf, type: 3}
   - {fileID: 21300000, guid: fc6f91ca29cce6f4d9df6d60c47b1744, type: 3}
-  size: 1
+  size: 2
   minSize: 0.5
-  maxSize: 1.5
-  speed: 50
+  maxSize: 2
+  speed: 25
+  paused: 0
